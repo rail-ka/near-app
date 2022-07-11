@@ -71,7 +71,19 @@ const createP = (text: string) => {
     signInButton.style.display = "flex";
     signOutButton.style.display = "none";
     table.style.display = "none";
+    select.style.display = "none";
+    const option = document.createElement("option");
+    option.innerText = "select market";
+    option.toggleAttribute("hidden");
+    option.toggleAttribute("disabled");
+    option.toggleAttribute("selected");
+    option.toggleAttribute("value");
+    select.replaceChildren(option);
     app.replaceChildren();
+    bidOrdersEl.replaceChildren();
+    askOrdersEl.replaceChildren();
+    diffEl.innerText = "";
+    totalEl.innerText = "";
   };
 
   const onSignIn = async () => {
@@ -103,6 +115,8 @@ const createP = (text: string) => {
       option.innerText = `${market.base.ticker} / ${market.quote.ticker}`;
       select.append(option);
     }
+
+    select.style.display = "flex";
 
     select.onchange = async (e) => {
       const value = (e.target as HTMLSelectElement).value;
