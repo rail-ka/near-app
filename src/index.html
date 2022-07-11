@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>near-app</title>
+    <style>
+      body,
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #signin {
+        display: flex;
+      }
+
+      #signout {
+        display: none;
+      }
+
+      #table {
+        display: none;
+        align-items: center;
+        justify-items: baseline;
+        flex-direction: column;
+      }
+
+      #bid-orders,
+      #ask-orders {
+        flex-direction: column;
+      }
+      #bid-orders .price {
+        color: red;
+      }
+      #ask-orders .price {
+        color: green;
+      }
+      .row {
+        width: 350px;
+        flex-direction: row;
+      }
+      .cell {
+        width: 100px;
+      }
+      #middle {
+        flex-direction: row;
+        width: 350px;
+      }
+      #diff {
+        align-items: flex-start;
+        width: 100px;
+      }
+      #spread {
+        align-items: flex-end;
+        width: 100px;
+      }
+      #total {
+        align-items: flex-end;
+        width: 150px;
+      }
+      .price {
+        align-items: flex-start;
+      }
+      .size,
+      .total {
+        align-items: flex-end;
+      }
+      .cell.total {
+        width: 150px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button id="signin" type="button">sign in</button>
+    <button type="button" id="signout">sign out</button>
+
+    <div id="app"></div>
+
+    <select name="markets" id="markets">
+      <option hidden disabled selected value>select market</option>
+    </select>
+
+    <div id="table">
+      <div id="bid-orders"></div>
+      <div id="middle">
+        <div id="diff"></div>
+        <div id="spread">Spread</div>
+        <div id="total"></div>
+      </div>
+      <div id="ask-orders"></div>
+    </div>
+
+    <script src="/src/index.ts" type="module"></script>
+  </body>
+</html>

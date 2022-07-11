@@ -1,0 +1,8 @@
+node_modules
+dist
+/dist*
+/build/
+.idea
+.DS_Store
+.vscode
+.parcel-cache

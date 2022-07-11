@@ -1,0 +1,30 @@
+{
+  "name": "near-app",
+  "private": true,
+  "version": "0.1.0",
+  "source": "src/index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
+  "scripts": {
+    "start": "parcel src/index.html --open chrome",
+    "build": "parcel build",
+    "format": "prettier --write 'src/index.{ts,html}'"
+  },
+  "author": "Rail Khusnutdinov <rail@33.run>",
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^3.2.0",
+    "@types/node": "^18.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/parser": "^5.30.5",
+    "buffer": "^6.0.3",
+    "eslint": "^8.19.0",
+    "eslint-config-prettier": "^8.5.0",
+    "parcel": "^2.6.2",
+    "prettier": "^2.7.1",
+    "process": "^0.11.10",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "near-api-js": "^0.45.1"
+  },
+  "sideEffects": false
+}
